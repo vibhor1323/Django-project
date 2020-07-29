@@ -3,7 +3,7 @@
     <head>
         <title>Login</title>
         <!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -14,13 +14,17 @@
 <link rel="stylesheet" href="{% static  'accounts/style.css' %}" type="text/css">
 </head>
     <body>
-        <div class="container-fluid">
+        <div class="container">
            <h1>Welcome</h1>
            WELCOME! You can login here.
            <button class="btn btn-default" type="button" name ="button">Login</button>
         </div>
-        <div class="jumbotron">
-            <h1>Welcome!</h1>
-        </div>
+        <h1>{{myName}}
+        </h1>
+        <ul>
+            {% for number in numbers %}
+            <li>{{number}}</li>
+            {% endfor  %}
+        </ul>
     </body>
 </html>
