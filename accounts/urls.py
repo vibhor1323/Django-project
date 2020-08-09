@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from . import views
-from django.contrib.auth.views import LoginView,LogoutView 
+from django.contrib.auth.views import (LoginView,LogoutView,PasswordResetView,
+PasswordResetDoneView,PasswordResetConfirmView,PasswordResetCompleteView)
 
 urlpatterns = [
     url(r'^$', views.home),
@@ -9,5 +10,9 @@ urlpatterns = [
     url(r'^register/$', views.register, name='register'),
     url(r'^profile/$', views.view_profile,name = 'profile'),
     url(r'^profile/edit/$',views.edit_profile,name='edit_profile'),
-    url(r'^change-password/$',views.change_password,name='change_password')
-]
+    url(r'^change-password/$',views.change_password,name='change_password'),
+    url(r'^reset-password/$',PasswordResetView.as_view(),name='reset_password'),
+    url(r'^reset-password/done/$',PasswordResetDoneView.as_view(),name='password_reset_done'),
+    url(r'^reset-password/confirm(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+) /$',PasswordResetConfirmView.as_view(),name='password_reset_confirm'),
+    url(r'^reset-password/complete/$',PasswordResetCompleteView.as_view(),name='password_reset_complete')
+]  
