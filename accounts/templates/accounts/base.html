@@ -24,12 +24,14 @@
                     {% if user.is_authenticated %}
                     <ul class="nav navbar-nav">
                       <li><a href="/account">Home</a></li>
-                      <li><a href="/account/logout">LogOut</a></li>
+                      
                       <li><a href="{%url 'accounts:profile'%}">Profile</a></li>
                       <li><a href="/account/profile/edit">Edit</a></li>
                       <li><a href="/account/change-password">Change Password</a></li>
                      
                     </ul>
+                    <ul class="nav navbar-nav navbar-right"></ul>
+                      <li><a href="/account/logout">LogOut</a></li>
                     
                     {% else %}
                     <ul class="nav navbar-nav">
