@@ -28,10 +28,14 @@
                       <li><a href="{%url 'accounts:profile'%}">Profile</a></li>
                       <li><a href="/account/profile/edit">Edit</a></li>
                       <li><a href="/account/change-password">Change Password</a></li>
-                      <li><a href="/account/reset-password">Reset Password</a></li>
+                     
                     </ul>
                     
                     {% else %}
+                    <ul class="nav navbar-nav">
+                      <li><a href="/account/reset-password">Reset Password</a></li>
+
+                    </ul>
                       <ul class="nav navbar-nav navbar-right">
                           <li><a href="/account/login">LogIn</a></li>
                           <li><a href="/account/register">Register</a></li>
