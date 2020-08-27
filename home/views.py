@@ -16,7 +16,7 @@ class HomeView(TemplateView):
 
 		args = {'form':form, 'posts':posts, 'users':users, 'friends':friends}
 		return render(request, self.template_name, args)
-		
+
 	def post(self, request):
 		form = HomeForm(request.POST)
 		if form.is_valid():
@@ -38,3 +38,6 @@ def change_friends(request, operation, pk):
 	elif operation =='remove':
 		Friend.lose_friend(request.user, new_friend)
 	return redirect('home:home')
+
+
+# Create your views here.

@@ -1,19 +1,24 @@
-<!DOCTYPE html>
-{% extends 'base.html' %}
+{% extends 'accounts/base.html' %}
+{% load static %}
 
-{% block body%}
-<div class="container">
-<h1>Welcome</h1>
-<p>
-    You can login here!
 
-</p>
-<h2>Login</h2>
-<form method="POST">
-    {% csrf_token%}
-    {{form.as_p}}
-    <button type="submit">Login</button>
-</form>
-</div>
-{% endblock%}
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">
+{% endblock %}
 
+
+{% block body %}
+			<h1>
+			Welcome
+		</h1>
+		<h5>Vadakam, Namaste, Bojure !!</h5>
+		<br>
+		<form method="post">
+			{% csrf_token %}
+			{{form.as_p}}
+			<button class="btn btn-danger btn-sm" type="submit" name="button">
+			Login
+		</button>
+		</form>
+	
+{% endblock %}

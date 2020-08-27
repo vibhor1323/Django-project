@@ -1,4 +1,6 @@
 from django.shortcuts import redirect
+from django.urls import reverse
 
 def login_redirect(request):
-    return redirect('/account/login')
+	return redirect(reverse('accounts:login'))
+	

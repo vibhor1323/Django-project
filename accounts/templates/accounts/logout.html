@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-{% extends 'base.html' %}
+{% extends 'accounts/base.html' %}
+{% load static %}
 
-{% block body%}
-<div class="container">
-<h1>Logged out</h1>
-<p>
-    You have logged out!!!
-</p>
-</div>
-{% endblock%}
 
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">
+{% endblock %}
+
+
+{% block body %}
+	
+		<h2>Logged out</h2>
+		<p>See you soon</p>
+	
+{% endblock %}
